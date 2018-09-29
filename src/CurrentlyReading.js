@@ -15,12 +15,12 @@ return(
                   <h2 className="bookshelf-title">Currently Reading</h2>
                   <div className="bookshelf-books">
                     <ol className="books-grid">
-                      {books.map(books =>
+                      {this.state.books.map(books =>
                         <li key={books.id}>
                                                 <div className="book">
                                                   <div className="book-top">
                                                     <div className="book-cover">
-                                      <img src={this.books.imageLinks.thumbnail}></img>
+                                      <img src={books.imageLinks.thumbnail}></img>
                                       </div>
                                                     <div className="book-shelf-changer">
                                                       <select defaultValue="none">
@@ -33,8 +33,8 @@ return(
                                                       </select>
                                                     </div>
                                                   </div>
-                                                  <div className="book-title">{books.title}</div>
-                                                  <div className="book-authors">{books.authors}</div>
+                                                  <div className="book-title">{this.state.books.title}</div>
+                                                  <div className="book-authors">{this.state.books.authors}</div>
                                                 </div>
 
                                               </li>

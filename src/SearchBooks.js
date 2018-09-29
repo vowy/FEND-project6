@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import {Link} from 'react-router-dom'
 import CurrentlyReading from './CurrentlyReading.js'
+
 import * as BooksAPI from './BooksAPI.js'
 
 
@@ -65,12 +66,12 @@ render() {
             </div>
             <div className="search-books-results">
               <ol className="books-grid">
-{books.map(books =>
-  <li key={books.id}>
+{this.state.books.map(books =>
+  <li key={this.state.books.id}>
                           <div className="book">
                             <div className="book-top">
                               <div className="book-cover">
-                <img src={this.books.imageLinks.thumbnail}></img>
+                <img src={this.state.books.imageLinks.thumbnail}></img>
                 </div>
                               <div className="book-shelf-changer">
                                 <select defaultValue="none">
@@ -83,8 +84,8 @@ render() {
                                 </select>
                               </div>
                             </div>
-                            <div className="book-title">{books.title}</div>
-                            <div className="book-authors">{books.authors}</div>
+                            <div className="book-title">{this.state.books.title}</div>
+                            <div className="book-authors">{this.state.books.authors}</div>
                           </div>
 
                         </li>
