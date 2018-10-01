@@ -1,15 +1,12 @@
 import React, { Component } from 'react'
 import {Link} from 'react-router-dom'
-
 import Book from './Book.js'
-
 import * as BooksAPI from './BooksAPI.js'
-
 
 class SearchBooks extends Component {
       state = {books: [], query: '',shelf: []}
 
- searchBooks = (query) => {
+searchBooks = (query) => {
 
        if (!query || (query === '')) {
            this.setState({
@@ -29,7 +26,6 @@ class SearchBooks extends Component {
        })
        }
    }
-
 
 updateQuery(query) {
   this.setState({query: query});
@@ -70,9 +66,9 @@ render() {
   <Book updateBook = {this.props.updateBook} book={book} key={book.id} {...book} />)
 
 }
-			</ol>
-            </div>
-          </div>
+</ol>
+</div>
+</div>
 )
 }
 }

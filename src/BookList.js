@@ -1,9 +1,7 @@
 import React, { Component } from 'react'
 import {Link} from "react-router-dom"
 import Shelf from './Shelf.js'
-
 import * as BooksAPI from './BooksAPI.js'
-
 
 class BookList extends Component {
   constructor(props) {
@@ -12,7 +10,6 @@ class BookList extends Component {
     books: []
   }
 }
-
   componentDidMount() {
     BooksAPI.getAll().then((books => {
          this.setState ({books:books})
@@ -20,7 +17,6 @@ class BookList extends Component {
      )
    )
   }
-
 render() {
   return(
 <div className="list-books">

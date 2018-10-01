@@ -1,17 +1,13 @@
 import React, {Component} from 'react'
-import * as BooksAPI from './BooksAPI'
 
 class Book extends Component {
-
-
-
   render() {
 return(
   <li key = {this.props.id}>
           <div className="book">
             <div className="book-top">
               <div className="book-cover">
-  <img src={this.props.imageLinks.smallThumbnail}></img>
+  <img alt= "{this.props.title}" src={this.props.imageLinks.smallThumbnail}></img>
   </div>
   <div className="book-shelf-changer">
     <select value = {this.props.book.shelf || "none"} onChange={(e) => {this.props.updateBook(this.props.book, e.target.value)}}>

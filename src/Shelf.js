@@ -1,8 +1,5 @@
 import React, { Component } from 'react'
-import {Link} from 'react-router-dom'
 import Book from './Book.js'
-
-import * as BooksAPI from './BooksAPI.js'
 
 class Shelf extends Component {
 
