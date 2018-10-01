@@ -1,13 +1,13 @@
 import React, { Component } from 'react'
 import {Link} from 'react-router-dom'
-import CurrentlyReading from './CurrentlyReading.js'
+
+import Book from './Book.js'
 
 import * as BooksAPI from './BooksAPI.js'
 
 
 class SearchBooks extends Component {
-      state = {books: [], query: ''};
-
+      state = {books: [], query: '',shelf: []}
 
  searchBooks = (query) => {
 
@@ -66,30 +66,9 @@ render() {
             </div>
             <div className="search-books-results">
               <ol className="books-grid">
-{this.state.books.map(books =>
-  <li key={this.state.books.id}>
-                          <div className="book">
-                            <div className="book-top">
-                              <div className="book-cover">
-                <img src={this.state.books.imageLinks.thumbnail}></img>
-                </div>
-                              <div className="book-shelf-changer">
-                                <select defaultValue="none">
-                                  <option value="move" disabled>Move to...</option>
-                                  <option value="currentlyReading">Currently Reading</option>
-                                  <option value="wantToRead">Want to Read</option>
-                                  <option value="read">Read</option>
-                                  <option value="none">None</option>
+{this.state.books.map(book =>
+  <Book updateBook = {this.props.updateBook} book={book} key={book.id} {...book} />)
 
-                                </select>
-                              </div>
-                            </div>
-                            <div className="book-title">{this.state.books.title}</div>
-                            <div className="book-authors">{this.state.books.authors}</div>
-                          </div>
-
-                        </li>
-  )
 }
 			</ol>
             </div>

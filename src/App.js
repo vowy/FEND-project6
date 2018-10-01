@@ -6,6 +6,18 @@ import * as BooksAPI from './BooksAPI'
 import './App.css'
 
 class BooksApp extends React.Component {
+state=({books: []})
+
+  updateBook = (book, shelf) => {
+    BooksAPI.update(book, shelf)
+    .then(resp => {
+        book.shelf = shelf;
+        this.setState(state => ({
+          books: state.books.filter(b => b.id !== book.id).concat([book])
+        }))
+      })
+  }
+
 
   render() {
     return (
@@ -13,10 +25,10 @@ class BooksApp extends React.Component {
 
 
        <Route exact path="/" render={() =>(
-       <BookList />
+       <BookList updateBook ={this.updateBook}/>
        )}/>
 	  <Route exact path="/searchbooks" render={() =>(
-      <SearchBooks />
+      <SearchBooks updateBook ={this.updateBook}/>
       )}/>
 
 
