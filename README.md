@@ -6,11 +6,11 @@ This is the 6th project for [Udacity.com's](https://udacity.com/) Front-End Deve
 
 # Project Assignment
 
-Using Javascript and React, create an app/website that would allow a user to navigate through a list of books by utilizing a list of search terms. These books could then be added and sorted by shelves: Currently Reading, Want to Read, and books Read.
+## Using Javascript and React, create an app/website that would allow a user to add and sort books by shelves: Currently Reading, Want to Read, and books Read.
 
 # Install
 
-0. If you don't already, install npm. For more information about npm click (here)[https://www.npmjs.com/get-npm].
+0. If you don't already, install npm. For more information about npm click [here](https://www.npmjs.com/get-npm).
 1. Open Terminal
 2. Input in Terminal the following to clone the repository and cd into the directory:
 ```
