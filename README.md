@@ -6,7 +6,7 @@ This is the 6th project for [Udacity.com's](https://udacity.com/) Front-End Deve
 
 # Project Assignment
 
-## Using Javascript and React, create an app/website that would allow a user to add and sort books by shelves: Currently Reading, Want to Read, and books Read.
+## Using Javascript and React, create an app/website that would allow a user to add and sort books by shelves: Currently Reading, Want to Read, and books Read. Also, user could search for books by inputting a search term into the search bar.
 
 # Install
 
