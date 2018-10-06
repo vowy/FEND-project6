@@ -25,16 +25,16 @@ $ npm start
 
 # Version
 
-##Current Version:
+## Current Version:
 
-###v2.0
+### v2.0
 
 -Changed README.md, Book.js, and BookList after first review.
 
-##Older Versions:
+## Older Versions:
 
-###v1.0
+### v1.0
 -Project push to GitHub! All ready for review.
 
-###v0.0
+### v0.0
 -Starter code found {here}(https://github.com/udacity/reactnd-project-myreads-starte).
