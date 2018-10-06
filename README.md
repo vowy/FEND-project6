@@ -13,7 +13,7 @@ Using Javascript and React, create an app/website that would allow a user to nav
 0. If you don't already, install npm. For more information about npm click (here)[https://www.npmjs.com/get-npm].
 1. Open Terminal
 2. Input in Terminal the following to clone the repository and cd into the directory:
-```terminal
+```Terminal
 $ git clone https://github.com/vowy/project-6.git
 $ cd FEND-project6
 ```
