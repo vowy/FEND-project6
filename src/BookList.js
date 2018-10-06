@@ -18,14 +18,27 @@ class BookList extends Component {
    )
   }
 render() {
+  const shelves = {
+    currentlyReading: ['Currently Reading', 'currentlyReading'],
+    wantToRead: ['Want to Read', 'wantToRead'],
+    read: ['Read', 'read']
+  }
+
   return(
 <div className="list-books">
             <div className="list-books-title">
               <h1>MyReads</h1>
             </div>
-<Shelf updateBook ={this.props.updateBook} name ="Currently Reading" books = {this.state.books.filter(b => b.shelf === "currentlyReading")} />
-<Shelf updateBook ={this.props.updateBook} name ="Want To Read" books = {this.state.books.filter(b => b.shelf === "wantToRead")} />
-<Shelf updateBook ={this.props.updateBook} name ="Read" books = {this.state.books.filter(b => b.shelf === "read")} />
+
+            <div className="list-books-content">
+              { Object.keys(shelves).map((shelf) =>
+                <Shelf key={shelf}
+                  updateBook ={this.props.updateBook}
+                  name = {shelves[shelf][0]}
+                  books = {this.state.books.filter(b => b.shelf === shelves[shelf][1])} />
+              )}
+            </div>
+
 
 
             <div className="open-search">
