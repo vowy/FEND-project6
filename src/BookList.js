@@ -1,22 +1,15 @@
 import React, { Component } from 'react'
 import {Link} from "react-router-dom"
 import Shelf from './Shelf.js'
-import * as BooksAPI from './BooksAPI.js'
 
 class BookList extends Component {
   constructor(props) {
   super(props);
   this.state = {
-    books: []
+    books: this.props.books
   }
 }
-  componentDidMount() {
-    BooksAPI.getAll().then((books => {
-         this.setState ({books:books})
-       }
-     )
-   )
-  }
+
 render() {
   const shelves = {
     currentlyReading: ['Currently Reading', 'currentlyReading'],
@@ -35,7 +28,7 @@ render() {
                 <Shelf key={shelf}
                   updateBook ={this.props.updateBook}
                   name = {shelves[shelf][0]}
-                  books = {this.state.books.filter(b => b.shelf === shelves[shelf][1])} />
+                  books = {this.props.books.filter(b => b.shelf === shelves[shelf][1])} />
               )}
             </div>
 

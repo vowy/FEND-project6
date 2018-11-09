@@ -1,10 +1,16 @@
 import React, { Component } from 'react'
 import {Link} from 'react-router-dom'
 import Book from './Book.js'
+import * as BookUtils from './BookUtils'
 import * as BooksAPI from './BooksAPI.js'
 
 class SearchBooks extends Component {
-      state = {books: [], query: '',shelf: []}
+      state = {books: [], query: ''}
+componentWillReceiveProps = (props) => {
+  this.props = props;
+  let newList = BookUtils.mergeSearch(this.props.books, this.state.books);
+  this.setState({books: newList});
+}
 
 searchBooks = (query) => {
 
@@ -14,15 +20,15 @@ searchBooks = (query) => {
        })}
        else {
        BooksAPI.search(query).then((book) => {
+         let newList = [];
            if(!book.length) {
                this.setState({
                books: []
            })
        }
        else {
-           this.setState({books: book})
-
-       }
+         newList = BookUtils.mergeSearch(this.props.books, book);}
+           this.setState({books: newList})
        })
        }
    }
@@ -62,9 +68,10 @@ render() {
             </div>
             <div className="search-books-results">
               <ol className="books-grid">
-{this.state.books.map(book =>
-  <Book updateBook = {this.props.updateBook} book={book} key={book.id} {...book} />)
-
+{this.state.books && this.state.books.map(book =>
+  <li key={book.id}>
+  <Book updateBook = {this.props.updateBook} book={book} />
+</li>)
 }
 </ol>
 </div>

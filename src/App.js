@@ -7,7 +7,13 @@ import './App.css'
 
 class BooksApp extends React.Component {
 state=({books: []})
-
+componentDidMount() {
+  BooksAPI.getAll().then((books => {
+       this.setState ({books:books})
+     }
+   )
+ )
+}
   updateBook = (book, shelf) => {
     BooksAPI.update(book, shelf)
     .then(resp => {
@@ -24,10 +30,10 @@ state=({books: []})
 
 
        <Route exact path="/" render={() =>(
-       <BookList updateBook ={this.updateBook}/>
+       <BookList updateBook = {this.updateBook} books = {this.state.books} />
        )}/>
 	  <Route exact path="/searchbooks" render={() =>(
-      <SearchBooks updateBook ={this.updateBook}/>
+      <SearchBooks updateBook ={ this.updateBook} books = {this.state.books}/>
       )}/>
 
 
