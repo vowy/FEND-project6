@@ -37,4 +37,4 @@ $ npm start
 -Project push to GitHub! All ready for review.
 
 ### v0.0
--Starter code found {here}(https://github.com/udacity/reactnd-project-myreads-starte).
+-Starter code found [here](https://github.com/udacity/reactnd-project-myreads-starte).
