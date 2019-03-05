@@ -10,7 +10,7 @@ This is the 6th project for [Udacity.com's](https://udacity.com/) Front-End Deve
 
 # Install
 
-0. If you don't already, install npm. For more information about npm click [here](https://www.npmjs.com/get-npm).
+0. Must have npm installed. For more information about npm click [here](https://www.npmjs.com/get-npm).
 1. Open Terminal
 2. Input in Terminal the following to clone the repository and cd into the directory:
 ```
